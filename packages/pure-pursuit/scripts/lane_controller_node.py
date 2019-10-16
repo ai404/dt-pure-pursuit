@@ -105,8 +105,8 @@ class lane_controller(object):
 
          
         #rospy.loginfo("[%s] colors found: %s"%(self.node_name, segments.keys()))
-        v_init = .3
-        self.gain = 4
+        v_init = .1
+        self.gain = 2
         if self.follow_point is not None:
             #xs, ys = self.smooth_follow_point# = (1-self.beta)*self.smooth_follow_point + self.beta*self.follow_point
             # calculate velocity
@@ -147,7 +147,7 @@ class lane_controller(object):
         # Send stop command
         self.do(0, 0)
 
-        rospy.sleep(0.5)    #To make sure that it gets published.
+        rospy.sleep(3)    #To make sure that it gets published.
         rospy.loginfo("[%s] Shutdown" %self.node_name)
 
 
@@ -158,3 +158,4 @@ if __name__ == "__main__":
 
     lane_control_node = lane_controller()
     rospy.spin()
+    #rospy.on_shutdown(custom_shutdown)
