@@ -9,5 +9,7 @@ for file in files:
     errors_df["Time"] -= errors_df["Time"].min()
     plt.plot(errors_df["Time"], errors_df[column1], label=column1)
     plt.plot(errors_df["Time"], errors_df[column2], label=column2)
+    plt.xlabel("Time in seconds")
+    plt.title("Plotting %s and %s vs time"%(column1, column2))
     plt.legend()
     plt.savefig("%s-%s.jpg"%(column1,column2))
