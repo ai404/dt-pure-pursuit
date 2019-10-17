@@ -1,5 +1,5 @@
 git add .
-git commit -am "another push"
+git commit -am "cleaned code + comments"
 git push
 dts devel build --push -u ai404
 
