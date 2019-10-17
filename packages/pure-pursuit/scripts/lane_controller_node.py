@@ -40,7 +40,7 @@ class lane_controller(object):
         rospy.loginfo("[%s] %s = %s " %(self.node_name,param_name,value))
         return value
 
-    def loop_around(self, omega = 2):
+    def loop_around(self, omega = -1):
         self.do(0, omega)
 
     @staticmethod
@@ -106,7 +106,7 @@ class lane_controller(object):
          
         #rospy.loginfo("[%s] colors found: %s"%(self.node_name, segments.keys()))
         v_init = .1
-        self.gain = 2
+        self.gain = 4
         if self.follow_point is not None:
             #xs, ys = self.smooth_follow_point# = (1-self.beta)*self.smooth_follow_point + self.beta*self.follow_point
             # calculate velocity
@@ -122,7 +122,7 @@ class lane_controller(object):
 
             ### without scaling
             v = v_init#*vf_norm
-            self.omega = 2*v_init*sin_theta*self.gain
+            self.omega = sin_theta*self.gain
 
             ### with scaling
             #v = v_init*vf_norm*1.2
