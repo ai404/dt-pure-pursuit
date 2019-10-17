@@ -93,7 +93,7 @@ class lane_controller(object):
                 """
             elif len(segments[1]["x"])>0:
                 # use yellow points
-                self.process_segments(segments[1] , offset=-0.2, name="yellow") #-.1
+                self.process_segments(segments[1] , offset=-0.25, name="yellow") #-.1
             elif len(segments[0]["x"])>0:
                 # use white points
                 #self.process_segments(segments[0] , offset=0.45, name="white")#without scaling
