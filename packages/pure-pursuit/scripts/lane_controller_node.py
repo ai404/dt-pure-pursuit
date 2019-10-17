@@ -107,7 +107,7 @@ class lane_controller(object):
          
         #rospy.loginfo("[%s] colors found: %s"%(self.node_name, segments.keys()))
         v_init = .25 #.2
-        self.gain = 5 #6
+        self.gain = 6 #6
         if self.follow_point is not None:
             #xs, ys = self.smooth_follow_point# = (1-self.beta)*self.smooth_follow_point + self.beta*self.follow_point
             # calculate velocity
